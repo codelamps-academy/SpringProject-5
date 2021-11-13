@@ -28,7 +28,7 @@ docker run --rm \
 -e POSTGRES_USER=springinvoice \
 -e POSTGRES_PASSWORD=springinvoice123 \
 -e PGDATA=/var/lib/postgresql/data/pgdata \
--v "$PWD/springvoicedb-data:/var/lib/postgresql/data" \
+-v "$PWD/springvoicedb1:/var/lib/postgresql/data" \
 -p 5432:5432 \
 postgres
 ```

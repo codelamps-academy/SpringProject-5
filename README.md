@@ -16,6 +16,8 @@ Diantar metode pembayaran yang akan disupport antara lain :
   * QRIS
 
 
+##############################################################
+
 
 # Cara Setup Database #
 
@@ -24,17 +26,35 @@ Diantar metode pembayaran yang akan disupport antara lain :
 ```
 docker run --rm \
 --name spring-invoice \
--e POSTGRES_DB=springinvoicedb2 \
+-e POSTGRES_DB=springinvoicedb \
 -e POSTGRES_USER=springinvoice \
 -e POSTGRES_PASSWORD=springinvoice123 \
 -e PGDATA=/var/lib/postgresql/data/pgdata \
+-v "$PWD/springinvoicedb-data:/var/lib/postgresql/data" \
 -p 5432:5432 \
 postgres
 ```
 
+##############################################################
 
 # CARA MASUK KE POSTGRESQL #
 
 ```
 psql -h localhost -p 5444 -U springinvoice springinvoicedb
 ```
+
+
+##############################################################
+
+# CARA MENGHAPUS DATABASE YANG TERSIMPAN DI LOCAL #
+
+```
+di linux = sudo rm -rf (nama database)
+
+di mac = rm -rf (nama database)
+```
+
+
+##############################################################
+
+

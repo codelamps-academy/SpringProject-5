@@ -1,6 +1,8 @@
 package com.blackspring.invocation.management.entity;
 
 import lombok.Data;
+import org.hibernate.annotations.SQLDelete;
+import org.hibernate.annotations.Where;
 
 import javax.persistence.Entity;
 import javax.persistence.JoinColumn;
@@ -13,6 +15,8 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 
 @Entity @Data
+@SQLDelete(sql = "UPDATE invoice_type SET status_record = 'INACTIVE' WHERE id=?")
+@Where(clause = "status_record='ACTIVE'")
 public class Invoice extends BaseEntity{
 
     @NotNull

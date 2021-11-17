@@ -6,5 +6,7 @@ import javax.persistence.Entity;
 
 @Entity
 @Data
-public class Payment {
+public class Payment extends BaseEntity{
+
+
 }
